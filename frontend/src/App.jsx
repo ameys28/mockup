@@ -1,11 +1,7 @@
 import { useEffect } from "react";
-import Counter from "./components/Counter"
-import { RoundedCornerOutlined } from "@mui/icons-material";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  
-import CampaignDetailsPage from "./components/campaign/CampaignDetailsPage";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";  
 import toast, { Toaster } from 'react-hot-toast';
-import { Button } from "@/components/ui/button";
-import CampaignsPage from "./components/campaign/CampaignsPage";
+import Landing from "./components/Landing";
 const App = () => {
 
   useEffect(()=>{
@@ -15,10 +11,12 @@ const App = () => {
   },[]);
 
   return (
-    <>
-    home
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
 
-      </>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
