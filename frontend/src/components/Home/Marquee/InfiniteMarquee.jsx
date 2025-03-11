@@ -12,7 +12,7 @@ export function InfiniteMarquee({ direction = "left", images }) {
     return (
         <div ref={containerRef} className="relative overflow-hidden py-2 w-full">
             <motion.div
-                className="flex gap-4"
+                className="flex"
                 animate={{ x: direction === "left" ? ["0%", "-100%"] : ["-100%", "0%"] }}
                 transition={{
                     ease: "linear",
@@ -28,9 +28,9 @@ export function InfiniteMarquee({ direction = "left", images }) {
                         transition={{ duration: 0.2 }}
                     >
                         <img 
-                            src={image.src || "/placeholder.svg"} 
+                            src={image.src} 
                             alt={image.alt} 
-                            className="w-full h-full object-cover"
+                            className="w-[80%] h-[80%] object-cover"
                         />
                     </motion.div>
                 ))}

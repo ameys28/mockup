@@ -16,10 +16,10 @@ export function Navbar() {
   }, [])
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Play Game", href: "/game" },
-    { label: "Shop", href: "/shop" },
-    { label: "Blogs", href: "/blog" },
+    { label: "Home", to: "/" },
+    { label: "Play Game", to: "/game" },
+    { label: "Shop", to: "/shop" },
+    { label: "Blogs", to: "/blog" },
   ]
 
   return (
@@ -29,16 +29,17 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={`fixed left-6 right-6 top-6 z-50 mx-auto rounded-2xl bg-[#FFD502] transition-all duration-300 ${
-          scrolled ? "h-[64px] shadow-md" : "h-[80px]"
+          scrolled ? "h-[50px] shadow-lg w-[60%]" : "h-[70px] w-[70%]"
         }`}
       >
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-8">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-8 transition-all duration-300">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img
+            <motion.img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lego-logo-pkH7e9qCovvEJv9YhDV2UvYoRgVWSH.png"
               alt="Lego Logo"
-              className="h-10 w-20"
+              className="transition-all duration-300"
+              animate={{ height: scrolled ? "30px" : "40px", width: scrolled ? "80px" : "100px" }}
             />
           </Link>
 
@@ -47,9 +48,9 @@ export function Navbar() {
             <nav>
               <ul className="flex gap-8">
                 {navItems.map((item) => (
-                  <li key={item.href}>
+                  <li key={item.to}>
                     <Link
-                      to={item.href} // ✅ Corrected `to` instead of `href`
+                      to={item.to}
                       className="relative text-base font-medium text-[#2b2b2b] transition-colors hover:text-[#E3000B] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[#E3000B] after:transition-all hover:after:w-full"
                     >
                       {item.label}
@@ -60,9 +61,14 @@ export function Navbar() {
             </nav>
 
             {/* Login Button */}
-            <Button className="rounded-full ml-5 bg-[#E3000B] px-8 py-4 text-white transition-transform hover:scale-105 hover:bg-[#E3000B]/90">
-              Login / Sign Up
-            </Button>
+            <motion.div
+              animate={{ scale: scrolled ? 0.9 : 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Button className="rounded-full ml-5 bg-[#E3000B] px-8 py-4 text-white transition-transform hover:scale-105 hover:bg-[#E3000B]/90">
+                Login / Sign Up
+              </Button>
+            </motion.div>
           </div>
         </div>
       </motion.header>
