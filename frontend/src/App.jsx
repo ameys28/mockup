@@ -4,8 +4,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Layout } from "./components/Layout";
 import Landing from "./components/Landing";
 import { Home } from "./components/Home";
-import { Blog } from "./components/Blog";
+import   Blog from "./components/Blog";
 import { Forum } from "./components/Forum";
+import BlogDetails from "./components/BlogDetails";
 const App = () => {
 
   useEffect(()=>{
@@ -20,6 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/forum" element={<Forum />} />
         </Routes>
       </Layout>

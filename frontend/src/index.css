@@ -32,3 +32,39 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+:root {
+  --red: #e3000b;
+  --yellow: #ffd502;
+  --whitesmoky: #f6f6f6;
+  --black: #2b2b2b;
+}
+
+@layer base {
+  body {
+    @apply bg-whitesmoky text-black font-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-red text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity;
+  }
+
+  .btn-secondary {
+    @apply bg-black text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
