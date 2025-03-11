@@ -29,12 +29,13 @@ export function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-4 ml-10">
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} className="mb-8">
-          {/* <LegoLogo className="h-32 w-32" /> */}
+      <div className="relative z-10 flex h-full flex-col justify-center items-center text-center px-4 sm:px-8 lg:px-16">
+        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} className="mb-6">
+          {/* <LegoLogo className="h-24 w-24 sm:h-32 sm:w-32" /> */}
         </motion.div>
 
-        <div className="relative h-24">
+        {/* Animated Heading */}
+        <div className="relative h-20 sm:h-24">
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentText}
@@ -42,7 +43,7 @@ export function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white"
             >
               {heroTexts[currentText]}
             </motion.h1>
@@ -53,23 +54,24 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 max-w-xl text-lg text-white/90 px-5"
+          className="mt-6 max-w-lg sm:max-w-xl text-base sm:text-lg text-white/90 px-4 sm:px-0"
         >
           Join millions of LEGO® enthusiasts and discover a world where imagination knows no bounds.
         </motion.p>
 
+        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-12 flex gap-6"
+          className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6"
         >
-          <Button className="rounded-full bg-[#E3000B] px-8 py-6 text-white transition-transform hover:scale-105 hover:bg-[#E3000B]/90">
+          <Button className="rounded-full bg-[#E3000B] text-white px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 transition-transform hover:scale-105 hover:bg-[#E3000B]/90">
             Start Building
           </Button>
           <Button
             variant="outline"
-            className="rounded-full border-2 border-[#FFD502] bg-transparent px-8 py-6 text-[#FFD502] transition-transform hover:scale-105 hover:bg-[#FFD502]/10"
+            className="rounded-full border-2 border-[#FFD502] text-[#FFD502] bg-transparent px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 transition-transform hover:scale-105 hover:bg-[#FFD502]/10"
           >
             Watch Story
           </Button>
@@ -78,4 +80,3 @@ export function HeroSection() {
     </section>
   )
 }
-

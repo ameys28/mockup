@@ -22,11 +22,11 @@ export function MarqueeSection() {
     const marqueeConfigs = [
         { direction: "left", speed: 25 },
         { direction: "right", speed: 35 },
-        { direction: "left", speed: 40 }
+        // { direction: "left", speed: 40 }
     ];
 
     return (
-        <section className="bg-[#F6F6F6] py-3 h-[100vh] flex flex-col gap-2">
+        <section className="bg-[#F6F6F6] py-3 h-[80vh] flex flex-col gap-2">
             <div className="container mx-auto mb-3">
                 <h2 className="text-center text-3xl font-bold text-[#2b2b2b] md:text-4xl">
                     Explore Creations
