@@ -1,28 +1,29 @@
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";  
-import toast, { Toaster } from 'react-hot-toast';
-import { Layout } from "./components/Layout";
-import Landing from "./components/Landing";
-import { Home } from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  
 import { Blog } from "./components/Blog";
 import { Forum } from "./components/Forum";
-const App = () => {
+import { Footer } from "./components/Home/Footer/Footer";
+import { CreativeSection } from "./components/Home/CreativeSection/CreativeSection";
+import { MarqueeSection } from "./components/Home/Marquee/MarqueeSection";
+import { Newsletter } from "./components/Home/NewsLetter/NewsLetter";
+import { ProductsSection } from "./components/Home/FeaturedProducts/ProductSection";
+import { Navbar } from "./components/Home/Navbar/Navbar";
+import { MovieSection } from "./components/Home/MovieSection/MovieSection";
 
-  useEffect(()=>{
-    toast.success("Here is the toast!",{
-      position:'bottom-center'
-    });
-  },[]);
+const App = () => {
 
   return (
     <Router>
-      <Layout>
+      <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/" element={<Blog />} />
+          <Route path="/foot" element={<Footer/>} />
+          <Route path="/mr" element={<MarqueeSection/>} />
+          <Route path="/cr" element={<CreativeSection/>} />
           <Route path="/forum" element={<Forum />} />
+          <Route path="/nl" element={<Newsletter />} />
+          <Route path="/pr" element={<ProductsSection />} />
+          <Route path="/mv" element={<MovieSection />} />
         </Routes>
-      </Layout>
     </Router>
   )
 }
