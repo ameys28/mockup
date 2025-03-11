@@ -29,7 +29,7 @@ export function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-4">
+      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-4 ml-10">
         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} className="mb-8">
           {/* <LegoLogo className="h-32 w-32" /> */}
         </motion.div>
