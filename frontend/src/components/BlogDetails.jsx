@@ -161,149 +161,161 @@ export default function BlogDetails() {
   }
 
   return (
-    <article className="min-h-screen bg-white">
-      <div className="sticky top-16 z-40 bg-whitesmoky border-b border-gray-200">
-        <div className="container-custom py-3">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => router.back()}
-              className="flex items-center gap-1 text-black/70 hover:text-red transition-colors"
-            >
-              <ArrowLeft size={16} />
-            </button>
+    <article className="min-h-screen bg-[#121212] text-gray-200">
+  <div className="sticky top-16 z-40 bg-[#1E1E1E] border-b border-gray-700">
+    {/* <div className="container-custom py-3">
+      <div className="flex items-center justify-between">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center gap-1 text-gray-400 hover:text-red-400 transition-colors"
+        >
+          <ArrowLeft size={16} />
+        </button>
 
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => {
-                  setIsLiked(!isLiked)
-                  setLikes((prev) => (isLiked ? prev - 1 : prev + 1))
-                }}
-                className={`flex items-center gap-1 ${isLiked ? "text-red" : "text-black/70 hover:text-red"} transition-colors`}
-              >
-                <Heart size={16} fill={isLiked ? "#E3000B" : "none"} />
-                <span className="text-sm">{likes}</span>
-              </button>
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => {
+              setIsLiked(!isLiked);
+              setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
+            }}
+            className={`flex items-center gap-1 ${
+              isLiked ? "text-red-400" : "text-gray-400 hover:text-red-400"
+            } transition-colors`}
+          >
+            <Heart size={16} fill={isLiked ? "#E3000B" : "none"} />
+            <span className="text-sm">{likes}</span>
+          </button>
 
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`${isBookmarked ? "text-yellow" : "text-black/70 hover:text-yellow"} transition-colors`}
-              >
-                <Bookmark size={16} fill={isBookmarked ? "#FFD502" : "none"} />
-              </button>
+          <button
+            onClick={() => setIsBookmarked(!isBookmarked)}
+            className={`${
+              isBookmarked ? "text-yellow-400" : "text-gray-400 hover:text-yellow-400"
+            } transition-colors`}
+          >
+            <Bookmark size={16} fill={isBookmarked ? "#FFD502" : "none"} />
+          </button>
 
-              <button className="text-black/70 hover:text-red transition-colors">
-                <Share2 size={16} />
-              </button>
+          <button className="text-gray-400 hover:text-red-400 transition-colors">
+            <Share2 size={16} />
+          </button>
 
-              <button className="text-black/70 hover:text-red transition-colors">
-                <MessageSquare size={16} />
-              </button>
-            </div>
+          <button className="text-gray-400 hover:text-red-400 transition-colors">
+            <MessageSquare size={16} />
+          </button>
+        </div>
+      </div>
+    </div> */}
+  </div>
+
+  <motion.div
+    className="container-custom py-10 max-w-3xl mt-[6%]"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 font-serif text-gray-200">
+        {blog.title}
+      </h1>
+
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-black font-medium">
+          {blog.author.charAt(0)}
+        </div>
+        <div>
+          <p className="font-medium">{blog.author}</p>
+          <div className="flex items-center gap-2 text-sm text-gray-400">
+            <span>{blog.date}</span>
+            <span>·</span>
+            <span>{blog.readTime}</span>
           </div>
         </div>
       </div>
+    </motion.div>
 
-      <motion.div
-        className="container-custom py-10 max-w-3xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 font-serif text-black">{blog.title}</h1>
+    <motion.div
+      className="prose prose-lg max-w-none font-serif prose-headings:font-serif text-gray-300"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      dangerouslySetInnerHTML={{ __html: blog.content }}
+    />
 
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-full bg-yellow flex items-center justify-center text-black font-medium">
-              {blog.author.charAt(0)}
-            </div>
-            <div>
-              <p className="font-medium">{blog.author}</p>
-              <div className="flex items-center gap-2 text-sm text-black/60">
-                <span>{blog.date}</span>
-                <span>·</span>
-                <span>{blog.readTime}</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+    <motion.div
+      className="mt-12 pt-8 border-t border-gray-700"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => {
+              setIsLiked(!isLiked);
+              setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
+            }}
+            className={`flex items-center gap-1 ${
+              isLiked ? "text-red-400" : "text-gray-400 hover:text-red-400"
+            } transition-colors`}
+          >
+            <Heart size={18} fill={isLiked ? "#E3000B" : "none"} />
+            <span>{likes}</span>
+          </button>
 
-        <motion.div
-          className="prose prose-lg max-w-none font-serif prose-headings:font-serif text-black"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
+          <button
+            onClick={() => setIsBookmarked(!isBookmarked)}
+            className={`${
+              isBookmarked ? "text-yellow-400" : "text-gray-400 hover:text-yellow-400"
+            } transition-colors`}
+          >
+            <Bookmark size={18} fill={isBookmarked ? "#FFD502" : "none"} />
+          </button>
+        </div>
 
-        <motion.div
-          className="mt-12 pt-8 border-t border-gray-200"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => {
-                  setIsLiked(!isLiked)
-                  setLikes((prev) => (isLiked ? prev - 1 : prev + 1))
-                }}
-                className={`flex items-center gap-1 ${isLiked ? "text-red" : "text-black/70 hover:text-red"} transition-colors`}
-              >
-                <Heart size={18} fill={isLiked ? "#E3000B" : "none"} />
-                <span>{likes}</span>
-              </button>
+        <div>
+          <button className="text-gray-400 hover:text-red-400 transition-colors">
+            <Share2 size={18} />
+          </button>
+        </div>
+      </div>
 
-              <button
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`${isBookmarked ? "text-yellow" : "text-black/70 hover:text-yellow"} transition-colors`}
-              >
-                <Bookmark size={18} fill={isBookmarked ? "#FFD502" : "none"} />
-              </button>
-            </div>
+      <div className="flex items-start gap-4 mt-8">
+        <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-black text-xl font-medium">
+          {blog.author.charAt(0)}
+        </div>
+        <div>
+          <p className="font-bold text-lg">{blog.author}</p>
+          <p className="text-gray-400">{blog.authorBio}</p>
+        </div>
+      </div>
+    </motion.div>
 
-            <div>
-              <button className="text-black/70 hover:text-red transition-colors">
-                <Share2 size={18} />
-              </button>
-            </div>
-          </div>
+    <motion.div
+      className="mt-12 pt-8 border-t border-gray-700"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
+    >
+      <div className="flex flex-wrap gap-2">
+        {blog.tags.map((tag) => (
+          <Link
+            key={tag}
+            href={`/blogs?tag=${tag}`}
+            className="bg-gray-800 px-3 py-1.5 rounded-full text-sm text-gray-300 hover:bg-gray-700 transition-colors"
+          >
+            {tag}
+          </Link>
+        ))}
+      </div>
+    </motion.div>
+  </motion.div>
+</article>
 
-          <div className="flex items-start gap-4 mt-8">
-            <div className="w-16 h-16 rounded-full bg-yellow flex items-center justify-center text-black text-xl font-medium">
-              {blog.author.charAt(0)}
-            </div>
-            <div>
-              <p className="font-bold text-lg">{blog.author}</p>
-              <p className="text-black/70">{blog.authorBio}</p>
-            </div>
-          </div>
-        </motion.div>
 
-        <motion.div
-          className="mt-12 pt-8 border-t border-gray-200"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <div className="flex flex-wrap gap-2">
-            {blog.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/blogs?tag=${tag}`}
-                className="bg-whitesmoky px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
-              >
-                {tag}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
-    </article>
   )
 }
 
