@@ -14,11 +14,11 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#242424]">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-          <source src="https://drive.google.com/drive/folders/1-QgdLFI67iCOfEe0pXibbglYhJLQc82U" type="video/mp4" />
+          <source src="https://res.cloudinary.com/ds7sasaqb/video/upload/v1741673374/naw151vuv8k9jhdrcpnl.mp4" type="video/mp4" />
           <img
             src="/placeholder.svg?height=1080&width=1920"
             alt="LEGO Building"
