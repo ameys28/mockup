@@ -20,7 +20,7 @@ const App = () => {
     <Router>
       <Navbar/>
         <Routes>
-          <Route path="/" element={<Blog />} />
+          <Route path="/BLOG" element={<Blog />} />
           <Route path="/foot" element={<Footer/>} />
           <Route path="/mr" element={<MarqueeSection/>} />
           <Route path="/cr" element={<CreativeSection/>} />
@@ -31,8 +31,8 @@ const App = () => {
           <Route path="/pr" element={<ProductsSection />} />
           <Route path="/mv" element={<MovieSection />} />
           <Route path="/game" element={<PlayGame />} />
-          <Route path="/home" element={<HeroSection />} />
-          <Route path="/gg" element={<Main />} />
+          <Route path="/HOME" element={<HeroSection />} />
+          <Route path="/" element={<Main />} />
         </Routes>
     </Router>
   )
