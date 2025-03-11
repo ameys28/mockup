@@ -53,7 +53,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 max-w-xl text-lg text-white/90"
+          className="mt-8 max-w-xl text-lg text-white/90 px-5"
         >
           Join millions of LEGO® enthusiasts and discover a world where imagination knows no bounds.
         </motion.p>
