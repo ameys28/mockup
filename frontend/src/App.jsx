@@ -12,6 +12,7 @@ import { MovieSection } from "./components/Home/MovieSection/MovieSection";
 import BlogDetails from "./components/BlogDetails";
 import PlayGame from "./components/PlayGame/PlayGame";
 import { HeroSection } from "./components/Home/MainPage/HeroSection";
+import Main from "./components/Home/Main";
 
 const App = () => {
 
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/mv" element={<MovieSection />} />
           <Route path="/game" element={<PlayGame />} />
           <Route path="/home" element={<HeroSection />} />
+          <Route path="/gg" element={<Main />} />
         </Routes>
     </Router>
   )
