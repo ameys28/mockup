@@ -10,6 +10,9 @@ import { Navbar } from "./components/Home/Navbar/Navbar";
 import { MovieSection } from "./components/Home/MovieSection/MovieSection";
 
 import BlogDetails from "./components/BlogDetails";
+import PlayGame from "./components/PlayGame/PlayGame";
+import { HeroSection } from "./components/Home/MainPage/HeroSection";
+
 const App = () => {
 
   return (
@@ -25,6 +28,8 @@ const App = () => {
           <Route path="/nl" element={<Newsletter />} />
           <Route path="/pr" element={<ProductsSection />} />
           <Route path="/mv" element={<MovieSection />} />
+          <Route path="/game" element={<PlayGame />} />
+          <Route path="/home" element={<HeroSection />} />
         </Routes>
     </Router>
   )

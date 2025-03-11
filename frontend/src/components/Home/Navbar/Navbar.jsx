@@ -17,9 +17,9 @@ export function Navbar() {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Play Game", href: "/play" },
+    { label: "Play Game", href: "/game" },
     { label: "Shop", href: "/shop" },
-    { label: "Blogs", href: "/blogs" },
+    { label: "Blogs", href: "/blog" },
   ]
 
   return (

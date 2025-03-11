@@ -153,7 +153,7 @@ export default function BlogDetails() {
       <div className="container-custom py-20 text-center">
       <h1 className="text-3xl font-bold mb-4 font-serif">Blog not found</h1>
       <p className="mb-8">The blog post you're looking for doesn't exist or has been removed.</p>
-      <Link to="/blogs" className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
+      <Link to="/" className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium">
         Back to all blogs
       </Link>
     </div>
